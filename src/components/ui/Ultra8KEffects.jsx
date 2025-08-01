@@ -51,7 +51,7 @@ export const NeuralParticles = ({ count = 100 }) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      particles.forEach((particle, index) => {
+      particles.forEach((particle) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
 

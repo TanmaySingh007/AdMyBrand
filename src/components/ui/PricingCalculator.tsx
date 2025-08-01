@@ -31,7 +31,7 @@ interface PricingBreakdown {
 
 interface PricingCalculatorProps {
   className?: string;
-  onCalculate?: (total: number, breakdown: PricingBreakdown) => void;
+  onCalculate?: (_total: number, _breakdown: PricingBreakdown) => void;
 }
 
 const PricingCalculator: React.FC<PricingCalculatorProps> = ({ 
