@@ -10,7 +10,6 @@ import RoboticCalculator from '../components/ui/RoboticCalculator';
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [showTerminator, setShowTerminator] = useState(false);
-  const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {

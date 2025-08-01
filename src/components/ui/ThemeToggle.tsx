@@ -14,7 +14,7 @@ const ThemeToggle: React.FC = () => {
 
   const toggleTheme = () => {
     const themes: Array<'dark' | 'light' | 'night' | 'bright'> = ['dark', 'light', 'night', 'bright'];
-    const currentIndex = themes.indexOf(theme as any);
+    const currentIndex = themes.indexOf(theme as 'dark' | 'light' | 'night' | 'bright');
     const nextIndex = (currentIndex + 1) % themes.length;
     setTheme(themes[nextIndex]);
   };

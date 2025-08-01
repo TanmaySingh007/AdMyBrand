@@ -237,7 +237,7 @@ const RoboticCalculator = () => {
 
               {/* Scientific Functions */}
               <div className="grid grid-cols-4 gap-2 mb-4">
-                {scientificButtons.map((button, index) => (
+                {scientificButtons.map((button) => (
                   <motion.button
                     key={button.label}
                     whileHover={{ scale: 1.05 }}
@@ -252,7 +252,7 @@ const RoboticCalculator = () => {
 
               {/* Main Calculator Buttons */}
               <div className="grid grid-cols-4 gap-2">
-                {buttons.map((button, index) => (
+                {buttons.map((button) => (
                   <motion.button
                     key={button.label}
                     whileHover={{ scale: 1.05 }}
