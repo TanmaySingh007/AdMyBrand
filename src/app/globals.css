@@ -1,0 +1,405 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for Theme Support */
+:root {
+  --primary-cyan: #00ffff;
+  --primary-purple: #8b5cf6;
+  --primary-pink: #ec4899;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --border-color: rgba(0, 255, 255, 0.3);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --text-muted: #9ca3af;
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --border-color: rgba(0, 255, 255, 0.3);
+}
+
+/* Night Vision Mode */
+[data-theme="night"] {
+  --text-primary: #00ff00;
+  --text-secondary: #00cc00;
+  --text-muted: #009900;
+  --bg-primary: #001100;
+  --bg-secondary: #002200;
+  --border-color: rgba(0, 255, 0, 0.3);
+}
+
+/* Bright Mode */
+[data-theme="bright"] {
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Night Vision Mode - Enhanced */
+.night-vision {
+  filter: hue-rotate(90deg) brightness(1.2) contrast(1.5);
+}
+
+.night-vision * {
+  color: #00ff00 !important;
+  border-color: #00ff00 !important;
+}
+
+.night-vision .bg-black,
+.night-vision .bg-gray-900,
+.night-vision .bg-gray-800 {
+  background-color: #001100 !important;
+}
+
+.night-vision .text-white,
+.night-vision .text-gray-100,
+.night-vision .text-gray-200 {
+  color: #00ff00 !important;
+}
+
+.night-vision .text-gray-300,
+.night-vision .text-gray-400 {
+  color: #00cc00 !important;
+}
+
+.night-vision .text-gray-500,
+.night-vision .text-gray-600 {
+  color: #009900 !important;
+}
+
+/* Bright Mode - Enhanced */
+.bright-mode {
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.bright-mode .bg-black,
+.bright-mode .bg-gray-900,
+.bright-mode .bg-gray-800 {
+  background-color: #ffffff !important;
+}
+
+.bright-mode .text-white,
+.bright-mode .text-gray-100,
+.bright-mode .text-gray-200 {
+  color: #1f2937 !important;
+}
+
+.bright-mode .text-gray-300,
+.bright-mode .text-gray-400 {
+  color: #374151 !important;
+}
+
+.bright-mode .text-gray-500,
+.bright-mode .text-gray-600 {
+  color: #6b7280 !important;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Theme Transition */
+body,
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--primary-cyan), var(--primary-purple));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--primary-purple), var(--primary-pink));
+}
+
+/* 8K Text Rendering */
+.text-8k {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+/* Futuristic Selection */
+::selection {
+  background: linear-gradient(45deg, var(--primary-cyan), var(--primary-purple));
+  color: var(--text-primary);
+}
+
+::-moz-selection {
+  background: linear-gradient(45deg, var(--primary-cyan), var(--primary-purple));
+  color: var(--text-primary);
+}
+
+/* Keyframe Animations */
+@keyframes neural-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes holographic-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+  }
+}
+
+@keyframes quantum-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes data-stream {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes terminator-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Utility Classes */
+.neural-pulse {
+  animation: neural-pulse 2s ease-in-out infinite;
+}
+
+.holographic-glow {
+  animation: holographic-glow 3s ease-in-out infinite;
+}
+
+.quantum-spin {
+  animation: quantum-spin 4s linear infinite;
+}
+
+.data-stream {
+  animation: data-stream 2s linear infinite;
+}
+
+.scan-line {
+  animation: scan-line 3s linear infinite;
+}
+
+.terminator-pulse {
+  animation: terminator-pulse 1.5s ease-in-out infinite;
+}
+
+/* Enhanced Visibility Classes */
+.text-high-contrast {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.bg-enhanced {
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  border: 1px solid var(--border-color);
+}
+
+.border-enhanced {
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Responsive Design for 8K */
+@media (min-resolution: 192dpi) {
+  .text-8k {
+    font-weight: 500;
+  }
+}
+
+/* High DPI Optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .holographic-glow {
+    animation-duration: 2.5s;
+  }
+  
+  .quantum-spin {
+    animation-duration: 3.5s;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus States for Better Accessibility */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-cyan);
+  outline-offset: 2px;
+}
+
+/* Enhanced Button Styles */
+.btn-futuristic {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-futuristic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-futuristic:hover::before {
+  left: 100%;
+}
+
+/* Terminator-specific styles */
+.terminator-red {
+  color: #ff0000;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.terminator-bg {
+  background: linear-gradient(135deg, #1a0000, #330000);
+  border: 1px solid #ff0000;
+}
+
+.terminator-glow {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+/* Enhanced Card Styles */
+.card-holographic {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card-holographic:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+}
+
+/* Improved Text Visibility */
+.text-visible {
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.text-visible-secondary {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.text-visible-muted {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Enhanced Background Gradients */
+.bg-futuristic {
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.9) 0%, 
+    rgba(17, 17, 17, 0.8) 50%, 
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.bg-ai-gradient {
+  background: linear-gradient(135deg,
+    rgba(0, 255, 255, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 50%,
+    rgba(236, 72, 153, 0.1) 100%
+  );
+} 
