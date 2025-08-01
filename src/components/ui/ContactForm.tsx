@@ -19,7 +19,7 @@ interface FormErrors {
 }
 
 interface ContactFormProps {
-  onSubmit?: (_data: FormData) => Promise<void>;
+  onSubmit?: (data: FormData) => Promise<void>;
   className?: string;
 }
 

@@ -75,7 +75,7 @@ export const validateMaxLength = (value: string, maxLength: number, fieldName: s
 // Generic form submission handler
 export const handleFormSubmission = async <T>(
   data: T,
-  submitFunction: (_data: T) => Promise<ApiResponse>,
+  submitFunction: (data: T) => Promise<ApiResponse>,
   onSuccess?: (response: ApiResponse) => void,
   onError?: (error: string) => void
 ): Promise<boolean> => {

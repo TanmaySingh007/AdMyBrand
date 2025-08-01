@@ -77,8 +77,7 @@ export const useTheme = create<ThemeStore>()(
 
 // Initialize theme on mount
 export const initializeTheme = () => {
-  const { setTheme } = useTheme.getState();
-  const { theme } = useTheme.getState();
+  const { theme, setTheme } = useTheme.getState();
   setTheme(theme);
 };
 
